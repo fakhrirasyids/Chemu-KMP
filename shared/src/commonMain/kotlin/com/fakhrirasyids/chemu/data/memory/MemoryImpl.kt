@@ -8,7 +8,7 @@ import com.fakhrirasyids.chemu.domain.memory.Memory
     Memory implementation for CHIP-8 system.
 
     CHIP-8 has 4096 bytes (4KB) of memory (0x000 to 0xFFF).
-    The interpreter typically reserves 0x000 to 0x1FF.
+    Typically reserves 0x000 to 0x1FF.
     Programs are loaded starting at address 0x200.
 
     Key concepts:
