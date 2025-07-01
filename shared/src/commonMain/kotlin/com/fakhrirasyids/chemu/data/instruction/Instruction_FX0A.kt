@@ -1,0 +1,24 @@
+package com.fakhrirasyids.chemu.data.instruction
+
+import com.fakhrirasyids.chemu.domain.CPU
+import com.fakhrirasyids.chemu.domain.Core
+import com.fakhrirasyids.chemu.domain.OPCode
+import com.fakhrirasyids.chemu.domain.instruction.Instruction
+
+/*
+    Author: @fakhrirasyids
+
+    Instruction: FX0A - LD Vx, K
+    Wait for a key press, store the value of the key in Vx.
+
+    All execution halts until a key is pressed. Once a key is pressed,
+    its index (0 to 15) is stored into register Vx.
+*/
+@OptIn(ExperimentalUnsignedTypes::class)
+class Instruction_FX0A : Instruction {
+    override fun execute(core: Core, cpu: CPU, opcode: OPCode) {
+        val key = core.keyboard.waitForKeyPress()
+        cpu.v[opcode.x.toInt()] = key.toUByte()
+        cpu.pc = (cpu.pc + 2u).toUShort()
+    }
+}
