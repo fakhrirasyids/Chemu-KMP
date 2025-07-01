@@ -9,11 +9,11 @@ import com.fakhrirasyids.chemu.domain.instruction.Instruction
     V[15] (VF) is used for carry flag in math and collision logic.
 
     Key concepts:
-        - index =  16-bit address register (for memory addressing
-        - pc (Program Counter) = points to current instruction
-        - stack = for subroutine (suspending) calls
-        - sp (Stack Pointer) = tracks the top of the stack
-        - "cycle()" = fetch-decode-execute loop that runs each instruction
+        - index                 =  16-bit address register (for memory addressing
+        - pc (Program Counter)  = points to current instruction
+        - stack                 = for subroutine (suspending) calls
+        - sp (Stack Pointer)    = tracks the top of the stack
+        - "cycle()"             = fetch-decode-execute loop that runs each instruction
 */
 @OptIn(ExperimentalUnsignedTypes::class)
 class CPU(

@@ -8,10 +8,10 @@ import kotlin.jvm.JvmInline
     Class to decode 16-bit CHIP-8 instructions.
 
     Key concepts:
-        - and = Bitwise AND (filters specific bits)
-        - shr = Shift Right (moves each bits to the right)
-        - UShort = Unsigned 16-bit integer (perfect for CHIP-8 because it uses 16-bit)
-        - UByte = Unsigned 8-bit integer (used for register values)
+        - and       = Bitwise AND (filters specific bits)
+        - shr       = Shift Right (moves each bits to the right)
+        - UShort    = Unsigned 16-bit integer (perfect for CHIP-8 because it uses 16-bit)
+        - UByte     = Unsigned 8-bit integer (used for register values)
 */
 @JvmInline
 value class OPCode(val raw: UShort) {
