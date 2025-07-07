@@ -1,6 +1,6 @@
 package com.fakhrirasyids.chemu.data.display
 
-import com.fakhrirasyids.chemu.domain.display.Display
+import com.fakhrirasyids.chemu.domain.services.display.Display
 
 /*
     Author: @fakhrirasyids

@@ -1,6 +1,6 @@
 package com.fakhrirasyids.chemu.data.keyboard
 
-import com.fakhrirasyids.chemu.domain.keyboard.Keyboard
+import com.fakhrirasyids.chemu.domain.services.keyboard.Keyboard
 
 /*
     Author: @fakhrirasyids

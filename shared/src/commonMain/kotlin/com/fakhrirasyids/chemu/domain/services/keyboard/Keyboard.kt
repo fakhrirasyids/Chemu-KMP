@@ -1,4 +1,4 @@
-package com.fakhrirasyids.chemu.domain.keyboard
+package com.fakhrirasyids.chemu.domain.services.keyboard
 
 /*
     Author: @fakhrirasyids

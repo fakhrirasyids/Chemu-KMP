@@ -1,4 +1,4 @@
-package com.fakhrirasyids.chemu.domain
+package com.fakhrirasyids.chemu.domain.models
 
 import kotlin.jvm.JvmInline
 

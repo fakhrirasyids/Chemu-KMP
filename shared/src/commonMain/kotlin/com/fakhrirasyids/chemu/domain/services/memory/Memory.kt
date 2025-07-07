@@ -1,4 +1,4 @@
-package com.fakhrirasyids.chemu.domain.memory
+package com.fakhrirasyids.chemu.domain.services.memory
 
 /*
     Author: @fakhrirasyids
@@ -9,4 +9,7 @@ interface Memory {
     fun getByte(address: UShort): UByte
     fun setByte(address: UShort, value: UByte)
     fun getWord(address: UShort): UShort
+    fun loadProgram(program: ByteArray)
+    fun loadFont()
+    fun clear()
 }

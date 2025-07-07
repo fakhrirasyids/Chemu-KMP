@@ -1,9 +1,9 @@
-package com.fakhrirasyids.chemu.domain
+package com.fakhrirasyids.chemu.domain.models
 
-import com.fakhrirasyids.chemu.domain.display.Display
-import com.fakhrirasyids.chemu.domain.keyboard.Keyboard
-import com.fakhrirasyids.chemu.domain.memory.Memory
-import com.fakhrirasyids.chemu.domain.timers.Timers
+import com.fakhrirasyids.chemu.domain.services.display.Display
+import com.fakhrirasyids.chemu.domain.services.keyboard.Keyboard
+import com.fakhrirasyids.chemu.domain.services.memory.Memory
+import com.fakhrirasyids.chemu.domain.services.timers.Timers
 
 /*
     Author: @fakhrirasyids

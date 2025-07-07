@@ -1,4 +1,4 @@
-package com.fakhrirasyids.chemu.domain.display
+package com.fakhrirasyids.chemu.domain.services.display
 
 /*
     Author: @fakhrirasyids

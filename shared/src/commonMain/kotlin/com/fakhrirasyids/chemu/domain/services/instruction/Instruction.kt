@@ -1,8 +1,8 @@
-package com.fakhrirasyids.chemu.domain.instruction
+package com.fakhrirasyids.chemu.domain.services.instruction
 
-import com.fakhrirasyids.chemu.domain.CPU
-import com.fakhrirasyids.chemu.domain.Core
-import com.fakhrirasyids.chemu.domain.OPCode
+import com.fakhrirasyids.chemu.domain.usecase.CPU
+import com.fakhrirasyids.chemu.domain.models.Core
+import com.fakhrirasyids.chemu.domain.models.OPCode
 
 /*
     Author: @fakhrirasyids
