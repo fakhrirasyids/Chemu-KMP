@@ -11,6 +11,11 @@ import com.fakhrirasyids.chemu.data.instruction.timers.*
 import com.fakhrirasyids.chemu.domain.models.OPCode
 import com.fakhrirasyids.chemu.domain.services.instruction.Instruction
 
+/*
+    Author: @fakhrirasyids
+
+    Instruction Registry Mappings & Fallbacks.
+*/
 object InstructionRegistry {
 
     private val instructionMap: Map<UShort, Instruction> = mapOf(
@@ -51,9 +56,11 @@ object InstructionRegistry {
     )
 
     fun find(opcode: OPCode): Instruction? {
-        instructionMap[opcode.raw]?.let { return it }
-
         val raw = opcode.raw.toInt()
+        val maskedKey = (raw and 0xF000).toUShort()
+
+        instructionMap[maskedKey]?.let { return it }
+
         return when {
             raw and 0xF00F == 0x8000 -> Instruction_8XY0()
             raw and 0xF00F == 0x8001 -> Instruction_8XY1()

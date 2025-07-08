@@ -12,8 +12,8 @@ import com.fakhrirasyids.chemu.domain.services.timers.Timers
         - soundTimer = buzzer beeps when > 0
 */
 class TimersImpl : Timers {
-    var delayTimer: UByte = 0u
-    var soundTimer: UByte = 0u
+    override var delayTimer: UByte = 0u
+    override var soundTimer: UByte = 0u
 
     override fun tick() {
         if (delayTimer > 0u) delayTimer--

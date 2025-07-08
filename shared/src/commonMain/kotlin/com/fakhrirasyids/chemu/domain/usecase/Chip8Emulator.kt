@@ -45,4 +45,6 @@ class Chip8Emulator(
 
     fun getDisplay(): Display = display
     fun getKeyboard(): Keyboard = keyboard
+
+    fun getCpuState(): CPU = cpu
 }
