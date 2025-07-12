@@ -1,17 +1,22 @@
 package com.fakhrirasyids.chemu.domain.services.instruction
 
-import com.fakhrirasyids.chemu.domain.usecase.CPU
+import com.fakhrirasyids.chemu.domain.services.CPU
 import com.fakhrirasyids.chemu.domain.models.Core
 import com.fakhrirasyids.chemu.domain.models.OPCode
 
-/*
-    Author: @fakhrirasyids
-
-    Interface for CHIP-8 instruction implementations.
-
-    Every CHIP-8 instruction MUST IMPLEMENT this interface,
-    which defines how it modifies the CPU and Core state.
-*/
+/**
+ * Author: @fakhrirasyids
+ *
+ * Functional interface representing a single CHIP-8 instruction.
+ */
 fun interface Instruction {
+
+    /**
+     * Executes the CHIP-8 instruction logic.
+     *
+     * @param core The system abstraction (memory, display, keyboard, timers)
+     * @param cpu The CPU state (registers, PC, stack, etc.)
+     * @param opcode The current 2-byte instruction to execute
+     */
     fun execute(core: Core, cpu: CPU, opcode: OPCode)
 }

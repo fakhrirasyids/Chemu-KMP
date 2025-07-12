@@ -2,35 +2,51 @@ package com.fakhrirasyids.chemu.domain.models
 
 import kotlin.jvm.JvmInline
 
-/*
-    Author: @fakhrirasyids
-
-    Class to decode 16-bit CHIP-8 instructions.
-
-    Key concepts:
-        - and       = Bitwise AND (filters specific bits)
-        - shr       = Shift Right (moves each bits to the right)
-        - UShort    = Unsigned 16-bit integer (perfect for CHIP-8 because it uses 16-bit)
-        - UByte     = Unsigned 8-bit integer (used for register values)
-*/
+/**
+ * Author: @fakhrirasyids
+ *
+ * Inline class that represents and decodes a 16-bit CHIP-8 instruction (opcode).
+ *
+ * CHIP-8 opcodes are always 2 bytes (16 bits) and encode various operations depending
+ * on their bit pattern. This class provides helper properties to extract
+ * commonly used instruction fields for decoding.
+ */
 @JvmInline
 value class OPCode(val raw: UShort) {
 
-    // Get bits 8–11, then shift them right to get a value 0–15 (used as register Vx).
+    /**
+     * Extracts the X register index (bits 8–11).
+     * Often used to refer to register Vx.
+     */
     val x: UByte get() = ((raw.toInt() and 0x0F00) shr 8).toUByte()
 
-    // Get bits 4–7, then shift them right to get a value 0–15 (used as register Vy).
+    /**
+     * Extracts the Y register index (bits 4–7).
+     * Often used to refer to register Vy.
+     */
     val y: UByte get() = ((raw.toInt() and 0x00F0) shr 4).toUByte()
 
-    // Get the lowest 4 bits (bits 0–3), commonly used for sprite height or nibble values.
+    /**
+     * Extracts the lowest 4 bits (bits 0–3).
+     * Typically used for sprite height or as a nibble.
+     */
     val n: UByte get() = (raw and 0x000Fu).toUByte()
 
-    // Get the lowest 8 bits (bits 0–7), used as an 8-bit immediate constant.
+    /**
+     * Extracts the lowest 8 bits (bits 0–7).
+     * Used as an 8-bit immediate value.
+     */
     val kk: UByte get() = (raw and 0x00FFu).toUByte()
 
-    // Get the lowest 12 bits (bits 0–11), used as an address.
+    /**
+     * Extracts the lowest 12 bits (bits 0–11).
+     * Used to represent addresses in memory.
+     */
     val nnn: UShort get() = (raw and 0x0FFFu).toUShort()
 
-    // Get the top 4 bits (bits 12–15), used to identify the opcode type.
+    /**
+     * Extracts the highest 4 bits (bits 12–15).
+     * Used to determine the opcode category/type.
+     */
     val opcodeType: Int get() = (raw.toInt() and 0xF000) shr 12
 }
