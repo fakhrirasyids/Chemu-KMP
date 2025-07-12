@@ -1,7 +1,7 @@
 package com.fakhrirasyids.chemu.cpu
 
 import com.fakhrirasyids.chemu.di.FakeChip8EmulatorProvider
-import com.fakhrirasyids.chemu.domain.usecase.Chip8Emulator
+import com.fakhrirasyids.chemu.domain.usecase.Chip8EmulatorUseCase
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -9,7 +9,7 @@ import kotlin.test.assertTrue
 
 class Chip8EmulatorTest {
 
-    private lateinit var emulator: Chip8Emulator
+    private lateinit var emulator: Chip8EmulatorUseCase
     private lateinit var deps: FakeChip8EmulatorProvider.Dependencies
 
     @BeforeTest

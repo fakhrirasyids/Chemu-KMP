@@ -4,16 +4,16 @@ import com.fakhrirasyids.chemu.cpu.mock.FakeDisplay
 import com.fakhrirasyids.chemu.cpu.mock.FakeKeyboard
 import com.fakhrirasyids.chemu.cpu.mock.FakeMemory
 import com.fakhrirasyids.chemu.cpu.mock.FakeTimers
-import com.fakhrirasyids.chemu.domain.usecase.Chip8Emulator
+import com.fakhrirasyids.chemu.domain.usecase.Chip8EmulatorUseCase
 
 object FakeChip8EmulatorProvider {
-    fun provide(): Pair<Chip8Emulator, Dependencies> {
+    fun provide(): Pair<Chip8EmulatorUseCase, Dependencies> {
         val memory = FakeMemory()
         val display = FakeDisplay()
         val keyboard = FakeKeyboard()
         val timers = FakeTimers()
 
-        val emulator = Chip8Emulator(memory, display, keyboard, timers)
+        val emulator = Chip8EmulatorUseCase(memory, display, keyboard, timers)
 
         return emulator to Dependencies(memory, display, keyboard, timers)
     }
