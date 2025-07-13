@@ -8,6 +8,8 @@ plugins {
 }
 
 kotlin {
+    jvm()
+
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
@@ -72,6 +74,9 @@ android {
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
     }
+}
+dependencies {
+    testImplementation(libs.junit.junit)
 }
 
 multiplatformResources {
